@@ -1,0 +1,102 @@
+/* ── Final CTA Section ── */
+.final-cta {
+    position: relative;
+    background: var(--clr-bg-charcoal);
+    padding: 5rem 2rem;
+    border-top: 1px solid var(--clr-border);
+}
+
+.final-cta__inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.final-cta__panel {
+    position: relative;
+    text-align: center;
+    padding: 3.5rem 2.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+}
+
+/* Frame lines */
+.final-cta__frame-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--clr-border-accent), transparent);
+}
+
+.final-cta__frame-line--top {
+    top: -1px;
+}
+
+.final-cta__frame-line--bottom {
+    bottom: -1px;
+}
+
+.final-cta__text {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+    color: var(--clr-text);
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+}
+
+/* Button */
+.final-cta__button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2.5rem;
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.final-cta__button:hover {
+    background: #e61515;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow-primary);
+}
+
+.final-cta__button-glow {
+    position: absolute;
+    inset: 0;
+    background: var(--clr-primary-glow);
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.final-cta__button:hover .final-cta__button-glow {
+    opacity: 0.5;
+}
+
+.final-cta__button-label {
+    position: relative;
+    z-index: 1;
+}
+
+.final-cta__button-icon {
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.final-cta__button:hover .final-cta__button-icon {
+    transform: translateX(4px);
+}

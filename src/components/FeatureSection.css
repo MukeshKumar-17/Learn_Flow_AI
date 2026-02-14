@@ -1,0 +1,140 @@
+/* ── Feature Section ── */
+.features {
+    position: relative;
+    background: var(--clr-bg-dark);
+    padding: 5rem 2rem 6rem;
+    overflow: hidden;
+}
+
+/* Subtle connector line across cards */
+.features__connector-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.features__connector-h {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--clr-border-accent), transparent);
+    opacity: 0.4;
+}
+
+.features__inner {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* ── Feature Card ── */
+.feature-card {
+    position: relative;
+    background: var(--clr-bg-panel);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--clr-border-accent);
+}
+
+/* Top accent gradient line */
+.feature-card__accent-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(218, 11, 11, 0.45), transparent);
+    opacity: 0.5;
+}
+
+/* Hover overlay */
+.feature-card__hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--clr-primary-soft) 0%, transparent 60%);
+    border: 1px solid var(--clr-border-accent);
+    border-radius: var(--radius-sm);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.feature-card:hover .feature-card__hover-overlay {
+    opacity: 1;
+}
+
+/* Content */
+.feature-card__content {
+    position: relative;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Icon */
+.feature-card__icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--clr-primary-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: background 0.3s ease;
+}
+
+.feature-card:hover .feature-card__icon-wrap {
+    background: var(--clr-primary);
+}
+
+.feature-card__icon {
+    font-size: 1.5rem;
+    color: var(--clr-primary);
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover .feature-card__icon {
+    color: var(--clr-white);
+}
+
+/* Text */
+.feature-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--clr-white);
+    margin-bottom: 0.5rem;
+}
+
+.feature-card__text {
+    font-size: 0.875rem;
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .features__grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
