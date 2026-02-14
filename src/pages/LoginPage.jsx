@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import './LoginPage.css';
 
@@ -35,6 +35,7 @@ const btnVariants = {
 
 export default function LoginPage() {
     const sparkContainerRef = useRef(null);
+    const navigate = useNavigate();
 
     /* GSAP red sparks */
     useEffect(() => {
@@ -199,6 +200,7 @@ export default function LoginPage() {
                                         className="login__submit"
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.96 }}
+                                        onClick={() => navigate('/content')}
                                     >
                                         <div className="login__submit-bg"></div>
                                         <div className="login__submit-sweep"></div>
